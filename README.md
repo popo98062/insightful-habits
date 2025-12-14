@@ -62,7 +62,20 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Vercel
+
+This project is configured for easy deployment to Vercel. After linking your GitHub repository to Vercel, it will automatically detect the `vercel.json` file and deploy your application.
+
+- **Automatic Builds:** Vercel will build and deploy your project on every push to the connected Git branch.
+- **Base Path:** The `vercel.json` file sets `VITE_APP_BASE` to `/` during the build process, ensuring assets are resolved correctly.
+
+If you need to test locally, run:
+
+```sh
+npm ci
+npm run build
+# Serve `dist` any static server, or use `vite preview`
+```
 
 ### GitHub Pages
 
