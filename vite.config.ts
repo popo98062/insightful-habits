@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
   },
   // Use `DEPLOY_BASE` env var when deploying to GitHub Pages
   // e.g. set to `/repo-name/` in CI to make assets resolve correctly
-  base:'/insightful-habits',
+  base:'/',
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
