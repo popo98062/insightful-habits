@@ -64,6 +64,23 @@ This project is built with:
 
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
+### GitHub Pages
+
+This repository includes a GitHub Actions workflow (`.github/workflows/deploy-gh-pages.yml`) that builds the app and deploys the `dist` output to the `gh-pages` branch.
+
+- The workflow runs on pushes to the `main` branch and by manual dispatch.
+- The Vite `base` is set from the `DEPLOY_BASE` environment variable during the workflow so assets resolve at `https://{user}.github.io/{repo}/`.
+
+If you need to test locally, run:
+
+```sh
+npm ci
+npm run build
+# Serve `dist` any static server, or use `vite preview`
+```
+
+To change the deployed path explicitly, set `DEPLOY_BASE` in your workflow or replace it in `vite.config.ts`.
+
 ## Can I connect a custom domain to my Lovable project?
 
 Yes, you can!

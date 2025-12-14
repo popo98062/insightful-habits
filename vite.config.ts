@@ -9,6 +9,9 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  // Use `DEPLOY_BASE` env var when deploying to GitHub Pages
+  // e.g. set to `/repo-name/` in CI to make assets resolve correctly
+  base: process.env.DEPLOY_BASE || '/',
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
